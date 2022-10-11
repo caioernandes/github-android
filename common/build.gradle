@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace 'com.caioernandes.common'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         minSdk 23
-        targetSdk 32
+        targetSdk 33
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -38,6 +38,9 @@ dependencies {
     // Layout
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // ViewBinding
+    implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:4.3.0'
 
     // ViewModel and LiveData
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
