@@ -2,7 +2,7 @@ package com.caioernandes.githubandroid.data.repository
 
 import com.caioernandes.githubandroid.data.datasource.GithubProjectListRemoteDataSource
 import com.caioernandes.githubandroid.domain.model.GithubProjectData
-import com.caioernandes.githubandroid.domain.usecase.repository.GithubProjectListRepository
+import com.caioernandes.githubandroid.domain.repository.GithubProjectListRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow

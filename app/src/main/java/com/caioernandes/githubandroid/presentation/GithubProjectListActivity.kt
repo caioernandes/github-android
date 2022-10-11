@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.caioernandes.common.extensions.viewBinding
 import com.caioernandes.githubandroid.R
 import com.caioernandes.githubandroid.databinding.ActivityGithubProjectListBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class GithubProjectListActivity : AppCompatActivity(R.layout.activity_github_project_list) {
 
     private val binding by viewBinding(ActivityGithubProjectListBinding::inflate)
+
+    private val viewModel: GithubProjectListViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
