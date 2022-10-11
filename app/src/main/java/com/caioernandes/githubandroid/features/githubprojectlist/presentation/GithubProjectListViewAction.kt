@@ -1,3 +1,0 @@
-package com.caioernandes.githubandroid.features.githubprojectlist.presentation
-
-sealed class GithubProjectListViewAction

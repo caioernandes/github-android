@@ -17,15 +17,8 @@ class GithubProjectListActivity : AppCompatActivity(R.layout.activity_github_pro
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        setupToolbar()
+        setSupportActionBar(binding.toolbar)
         observeViewState()
-    }
-
-    private fun setupToolbar() {
-        with(binding.toolbar) {
-            setSupportActionBar(this)
-            title = getString(R.string.title_activity_github_project_list)
-        }
     }
 
     private fun observeViewState() {
