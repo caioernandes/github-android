@@ -1,18 +1,16 @@
 package com.caioernandes.githubandroid.data.model
 
+import com.google.gson.annotations.SerializedName
 
-import kotlinx.serialization.SerialName
-
-@Serializable
 data class LicenseResponse(
-    @SerialName("key")
+    @SerializedName("key")
     val key: String?,
-    @SerialName("name")
+    @SerializedName("name")
     val name: String?,
-    @SerialName("node_id")
+    @SerializedName("node_id")
     val nodeId: String?,
-    @SerialName("spdx_id")
+    @SerializedName("spdx_id")
     val spdxId: String?,
-    @SerialName("url")
+    @SerializedName("url")
     val url: String?
 )

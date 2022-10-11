@@ -1,44 +1,42 @@
 package com.caioernandes.githubandroid.data.model
 
+import com.google.gson.annotations.SerializedName
 
-import kotlinx.serialization.SerialName
-
-@Serializable
 data class OwnerResponse(
-    @SerialName("avatar_url")
+    @SerializedName("avatar_url")
     val avatarUrl: String?,
-    @SerialName("events_url")
+    @SerializedName("events_url")
     val eventsUrl: String?,
-    @SerialName("followers_url")
+    @SerializedName("followers_url")
     val followersUrl: String?,
-    @SerialName("following_url")
+    @SerializedName("following_url")
     val followingUrl: String?,
-    @SerialName("gists_url")
+    @SerializedName("gists_url")
     val gistsUrl: String?,
-    @SerialName("gravatar_id")
+    @SerializedName("gravatar_id")
     val gravatarId: String?,
-    @SerialName("html_url")
+    @SerializedName("html_url")
     val htmlUrl: String?,
-    @SerialName("id")
+    @SerializedName("id")
     val id: Int?,
-    @SerialName("login")
+    @SerializedName("login")
     val login: String?,
-    @SerialName("node_id")
+    @SerializedName("node_id")
     val nodeId: String?,
-    @SerialName("organizations_url")
+    @SerializedName("organizations_url")
     val organizationsUrl: String?,
-    @SerialName("received_events_url")
+    @SerializedName("received_events_url")
     val receivedEventsUrl: String?,
-    @SerialName("repos_url")
+    @SerializedName("repos_url")
     val reposUrl: String?,
-    @SerialName("site_admin")
+    @SerializedName("site_admin")
     val siteAdmin: Boolean?,
-    @SerialName("starred_url")
+    @SerializedName("starred_url")
     val starredUrl: String?,
-    @SerialName("subscriptions_url")
+    @SerializedName("subscriptions_url")
     val subscriptionsUrl: String?,
-    @SerialName("type")
+    @SerializedName("type")
     val type: String?,
-    @SerialName("url")
+    @SerializedName("url")
     val url: String?
 )
