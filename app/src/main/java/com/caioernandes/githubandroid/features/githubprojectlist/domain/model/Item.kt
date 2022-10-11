@@ -2,7 +2,7 @@ package com.caioernandes.githubandroid.features.githubprojectlist.domain.model
 
 data class Item(
     val name: String,
-    val forksCount: Int,
-    val stargazersCount: Int,
+    val forksCount: String,
+    val stargazersCount: String,
     val owner: Owner
 )

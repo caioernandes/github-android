@@ -19,8 +19,8 @@ private fun List<ItemResponse>?.toListItemDomain() = this?.map { it.toItemDomain
 
 private fun ItemResponse.toItemDomain() = Item(
     name = name.orEmpty(),
-    forksCount = forksCount.orZero(),
-    stargazersCount = stargazersCount.orZero(),
+    forksCount = forksCount.orZero().toString(),
+    stargazersCount = stargazersCount.orZero().toString(),
     owner = owner?.toOwnerDomain() ?: Owner(login = String(), avatarUrl = String())
 )
 
