@@ -17,7 +17,7 @@
         android:theme="@style/Theme.GithubAndroid"
         tools:targetApi="31">
         <activity
-            android:name="com.caioernandes.githubandroid.presentation.GithubProjectListActivity"
+            android:name="com.caioernandes.githubandroid.features.githubprojectlist.presentation.GithubProjectListActivity"
             android:exported="true"
             android:label="@string/title_activity_github_project_list"
             android:theme="@style/Theme.GithubAndroid.NoActionBar">
