@@ -8,7 +8,7 @@ import com.caioernandes.common.extensions.viewBinding
 import com.caioernandes.githubandroid.R
 import com.caioernandes.githubandroid.databinding.ActivityGithubProjectListBinding
 import com.caioernandes.githubandroid.features.githubprojectlist.domain.model.GithubProjectData
-import com.caioernandes.githubandroid.features.githubprojectlist.presentation.adapter.GithubProjectAdapter
+import com.caioernandes.githubandroid.features.githubprojectlist.presentation.adapter.GithubProjectListAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class GithubProjectListActivity : AppCompatActivity(R.layout.activity_github_project_list) {
@@ -17,7 +17,7 @@ class GithubProjectListActivity : AppCompatActivity(R.layout.activity_github_pro
 
     private val viewModel: GithubProjectListViewModel by viewModel()
 
-    private val adapter: GithubProjectAdapter by lazy { GithubProjectAdapter() }
+    private val adapter: GithubProjectListAdapter by lazy { GithubProjectListAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +25,11 @@ class GithubProjectListActivity : AppCompatActivity(R.layout.activity_github_pro
         setSupportActionBar(binding.toolbar)
         setupGithubProjectListRecyclerView()
         observeViewState()
+        onGetGithubProjectList()
+    }
+
+    private fun onGetGithubProjectList() {
+        viewModel.onGetGithubProjectList()
     }
 
     private fun observeViewState() {

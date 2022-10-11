@@ -18,11 +18,7 @@ class GithubProjectListViewModel(
     private val _viewState = MutableLiveData<GithubProjectListViewState>()
     val viewState: LiveData<GithubProjectListViewState> = _viewState
 
-    init {
-        onGetGithubProjectList()
-    }
-
-    private fun onGetGithubProjectList() {
+    fun onGetGithubProjectList() {
         viewModelScope.launch {
             getGithubProjectListUseCase()
                 .onStart { emitLoadingState(isLoading = true) }

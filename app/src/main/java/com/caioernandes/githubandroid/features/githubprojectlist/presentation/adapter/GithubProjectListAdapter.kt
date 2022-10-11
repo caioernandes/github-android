@@ -9,8 +9,8 @@ import com.caioernandes.common.extensions.loadFromUrl
 import com.caioernandes.githubandroid.databinding.ItemGithubProjectBinding
 import com.caioernandes.githubandroid.features.githubprojectlist.domain.model.Item
 
-internal class GithubProjectAdapter :
-    ListAdapter<Item, GithubProjectAdapter.GithubProjectViewHolder>(Companion) {
+internal class GithubProjectListAdapter :
+    ListAdapter<Item, GithubProjectListAdapter.GithubProjectViewHolder>(Companion) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GithubProjectViewHolder {
         val binding =
