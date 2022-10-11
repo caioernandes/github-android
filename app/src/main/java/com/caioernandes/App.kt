@@ -2,7 +2,7 @@ package com.caioernandes
 
 import android.app.Application
 import com.caioernandes.githubandroid.features.githubprojectlist.di.appModule
-import com.caioernandes.githubandroid.network.networkModule
+import com.caioernandes.network.networkModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 

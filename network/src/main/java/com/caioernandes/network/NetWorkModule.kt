@@ -1,6 +1,5 @@
-package com.caioernandes.githubandroid.network
+package com.caioernandes.network
 
-import com.caioernandes.githubandroid.BuildConfig
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.Request
