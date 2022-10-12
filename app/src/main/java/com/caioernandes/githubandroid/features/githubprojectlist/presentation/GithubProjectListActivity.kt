@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.caioernandes.common.extensions.showLongToast
 import com.caioernandes.common.extensions.viewBinding
 import com.caioernandes.githubandroid.R
 import com.caioernandes.githubandroid.databinding.ActivityGithubProjectListBinding
@@ -58,7 +59,7 @@ class GithubProjectListActivity : AppCompatActivity(R.layout.activity_github_pro
     }
 
     private fun showError(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+        showLongToast(text = message)
     }
 
     private fun showGithubProjectData(githubProjectData: GithubProjectData) {

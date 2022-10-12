@@ -30,8 +30,10 @@ internal class GithubProjectListAdapter :
             projectName.text = item.name
             forksCount.text = item.forksCount
             stargazersCount.text = item.stargazersCount
-            userAvatar.loadFromUrl(url = item.owner.avatarUrl)
-            userName.text = item.name
+            with(item.owner) {
+                userAvatar.loadFromUrl(url = avatarUrl)
+                userName.text = login
+            }
         }
     }
 

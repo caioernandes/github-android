@@ -10,8 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 val networkModule = module {
     single {
         val httpClient = OkHttpClient.Builder().addInterceptor { chain ->
-            val request: Request = chain.request().newBuilder()
-                .build()
+            val request: Request = chain.request().newBuilder().build()
             chain.proceed(request)
         }
         Retrofit.Builder()
