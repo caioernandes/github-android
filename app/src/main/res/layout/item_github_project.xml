@@ -9,8 +9,8 @@
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="8dp"
-        android:layout_marginVertical="8dp"
+        android:layout_marginHorizontal="@dimen/dimensOf8dp"
+        android:layout_marginVertical="@dimen/dimensOf8dp"
         android:checkable="true"
         android:clickable="true"
         android:focusable="true"
@@ -22,14 +22,14 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="8dp">
+            android:paddingBottom="@dimen/dimensOf8dp">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/projectName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="@dimen/dimensOf16dp"
+                android:layout_marginTop="@dimen/dimensOf16dp"
                 app:layout_constraintEnd_toStartOf="@id/userAvatar"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -39,8 +39,8 @@
                 android:id="@+id/forksCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginStart="@dimen/dimensOf16dp"
+                android:layout_marginTop="@dimen/dimensOf32"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/projectName"
                 tools:text="640" />
@@ -49,7 +49,7 @@
                 android:id="@+id/stargazersCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="@dimen/dimensOf16dp"
                 app:layout_constraintBottom_toBottomOf="@id/forksCount"
                 app:layout_constraintStart_toEndOf="@id/forksCount"
                 app:layout_constraintTop_toTopOf="@id/forksCount"
@@ -57,10 +57,10 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/userAvatar"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_width="@dimen/dimensOf48dp"
+                android:layout_height="@dimen/dimensOf48dp"
+                android:layout_marginTop="@dimen/dimensOf16dp"
+                android:layout_marginEnd="@dimen/dimensOf16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@android:drawable/ic_menu_upload" />
@@ -69,7 +69,7 @@
                 android:id="@+id/userName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/dimensOf8dp"
                 android:gravity="start"
                 app:layout_constraintEnd_toEndOf="@id/userAvatar"
                 app:layout_constraintTop_toBottomOf="@id/userAvatar"
