@@ -13,9 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GithubAndroid"
-        tools:targetApi="31">
+        android:usesCleartextTraffic="true"
+        tools:targetApi="33">
         <activity
-            android:name="com.caioernandes.githubandroid.features.githubprojectlist.presentation.GithubProjectListActivity"
+            android:name=".features.githubprojectlist.presentation.GithubProjectListActivity"
             android:exported="true"
             android:screenOrientation="fullSensor"
             android:theme="@style/Theme.GithubAndroid.NoActionBar">
