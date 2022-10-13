@@ -11,11 +11,13 @@ import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
+private const val INITIAL_PAGE_INDEX = 0
+
 class GithubProjectListViewModel(
     private val getGithubProjectListUseCase: GetGithubProjectListUseCase
 ) : ViewModel() {
 
-    private var page = 0
+    private var page = INITIAL_PAGE_INDEX
 
     private val _viewState = MutableLiveData<GithubProjectListViewState>()
     val viewState: LiveData<GithubProjectListViewState> = _viewState
