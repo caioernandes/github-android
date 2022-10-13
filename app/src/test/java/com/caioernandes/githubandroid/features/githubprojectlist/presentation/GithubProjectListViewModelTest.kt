@@ -67,20 +67,7 @@ internal class GithubProjectListViewModelTest {
     private fun getGithubProjectListUseCaseMockSuccess(page: Int = 1) {
         coEvery {
             getGithubProjectListUseCase(page = page)
-        } returns flowOf(
-            GithubProjectData(
-                incompleteResults = false,
-                items = listOf(
-                    Item(
-                        name = "name",
-                        forksCount = "10",
-                        stargazersCount = "12",
-                        owner = Owner(login = "login", avatarUrl = "avatarUrl")
-                    )
-                ),
-                totalCount = 10
-            )
-        )
+        } returns flowOf(GithubProjectListStub.resultSuccess)
     }
 
     private fun getGithubProjectListUseCaseMockError(page: Int = 1) {
