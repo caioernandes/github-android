@@ -1,16 +1,15 @@
 package com.caioernandes.githubandroid.features.githubprojectlist.presentation
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import com.caioernandes.common.extensions.onLastItemScrollListener
 import com.caioernandes.common.extensions.showLongToast
 import com.caioernandes.common.extensions.viewBinding
 import com.caioernandes.githubandroid.R
-import com.caioernandes.githubandroid.databinding.ActivityGithubProjectListBinding
 import com.caioernandes.githubandroid.databinding.FragmentGithubProjectListBinding
 import com.caioernandes.githubandroid.features.githubprojectlist.domain.model.GithubProjectData
 import com.caioernandes.githubandroid.features.githubprojectlist.presentation.adapter.GithubProjectListAdapter

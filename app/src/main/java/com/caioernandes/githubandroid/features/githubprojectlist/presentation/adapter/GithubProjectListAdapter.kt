@@ -2,8 +2,6 @@ package com.caioernandes.githubandroid.features.githubprojectlist.presentation.a
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.caioernandes.common.extensions.loadFromUrl
 import com.caioernandes.githubandroid.databinding.ItemGithubProjectBinding

@@ -4,7 +4,6 @@ import com.caioernandes.githubandroid.features.githubprojectlist.data.model.Gith
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-
 interface GithubProjectListService {
 
     @GET("search/repositories?q=language:kotlin&sort=starts")
