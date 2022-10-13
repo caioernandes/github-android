@@ -7,8 +7,9 @@ import okhttp3.mockwebserver.MockWebServer
 private const val GITHUB_PROJECT_LIST_ENDPOINT_PATH =
     "/search/repositories?q=language:kotlin&sort=starts&page=1"
 
-internal class GithubProjectListArrangeRobot(private val server: MockWebServer) :
-    ArrangeRobot(server) {
+internal class GithubProjectListArrangeRobot(
+    private val server: MockWebServer,
+) : ArrangeRobot(server) {
 
     operator fun invoke(func: GithubProjectListArrangeRobot.() -> Unit) =
         GithubProjectListArrangeRobot(server).apply { func() }
