@@ -33,7 +33,7 @@ class GithubProjectListViewModel(
                 .onStart { emitLoadingState(isLoading = true) }
                 .onCompletion { emitLoadingState(isLoading = false) }
                 .catch { emitMessageErrorState(throwable = it) }
-                .collect(::emitMovieCollectionResultState)
+                .collect(::emitGithubProjectListResultState)
         }
     }
 
@@ -45,7 +45,7 @@ class GithubProjectListViewModel(
         _viewState.value = GithubProjectListViewState.Failure(error = throwable.message.orEmpty())
     }
 
-    private fun emitMovieCollectionResultState(githubProjectData: GithubProjectData) {
+    private fun emitGithubProjectListResultState(githubProjectData: GithubProjectData) {
         _viewState.value = GithubProjectListViewState.Success(githubProjectData = githubProjectData)
     }
 }

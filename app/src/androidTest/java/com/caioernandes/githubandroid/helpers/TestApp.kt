@@ -9,7 +9,6 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-
 private const val BASE_URL = "http://127.0.0.1:8080"
 
 class TestApp : Application() {
@@ -29,7 +28,7 @@ class TestApp : Application() {
             Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .client(get())
-                .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
+                .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
                 .build()
         }
     }

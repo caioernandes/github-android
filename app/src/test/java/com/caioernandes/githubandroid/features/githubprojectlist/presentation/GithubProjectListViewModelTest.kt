@@ -3,6 +3,7 @@
 package com.caioernandes.githubandroid.features.githubprojectlist.presentation
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import androidx.test.filters.SmallTest
 import com.caioernandes.githubandroid.features.githubprojectlist.domain.model.GithubProjectData
 import com.caioernandes.githubandroid.features.githubprojectlist.domain.model.Item
 import com.caioernandes.githubandroid.features.githubprojectlist.domain.model.Owner
@@ -19,6 +20,7 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
+@SmallTest
 internal class GithubProjectListViewModelTest {
 
     @get:Rule
@@ -40,7 +42,7 @@ internal class GithubProjectListViewModelTest {
     fun `on get github project list returns success should call useCase once`() = runTest {
         // Given
         val page = 1
-        getMovieListUseCaseMockSuccess()
+        getGithubProjectListUseCaseMockSuccess()
 
         // When
         viewModel.onGetGithubProjectList()
@@ -53,7 +55,7 @@ internal class GithubProjectListViewModelTest {
     fun `on get github project list returns error should call useCase once`() = runTest {
         // Given
         val page = 1
-        getMovieListUseCaseMockError()
+        getGithubProjectListUseCaseMockError()
 
         // When
         viewModel.onGetGithubProjectList()
@@ -62,7 +64,7 @@ internal class GithubProjectListViewModelTest {
         coVerify(exactly = 0) { getGithubProjectListUseCase.invoke(page = page) }
     }
 
-    private fun getMovieListUseCaseMockSuccess(page: Int = 1) {
+    private fun getGithubProjectListUseCaseMockSuccess(page: Int = 1) {
         coEvery {
             getGithubProjectListUseCase(page = page)
         } returns flowOf(
@@ -81,7 +83,7 @@ internal class GithubProjectListViewModelTest {
         )
     }
 
-    private fun getMovieListUseCaseMockError(page: Int = 1) {
+    private fun getGithubProjectListUseCaseMockError(page: Int = 1) {
         coEvery {
             getGithubProjectListUseCase(page = page)
         } returns flow { throw InterruptedException() }
