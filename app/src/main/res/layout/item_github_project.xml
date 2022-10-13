@@ -26,6 +26,7 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/projectName"
+                style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dimensOf16dp"
@@ -36,23 +37,45 @@
                 tools:text="Nome Repositório" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/forksCount"
+                android:id="@+id/forksCountLabel"
+                style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dimensOf16dp"
                 android:layout_marginTop="@dimen/dimensOf32"
+                android:text="@string/forks_text"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/projectName"
+                app:layout_constraintTop_toBottomOf="@id/projectName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/forksCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimensOf8dp"
+                app:layout_constraintBottom_toBottomOf="@id/forksCountLabel"
+                app:layout_constraintStart_toEndOf="@id/forksCountLabel"
+                app:layout_constraintTop_toTopOf="@id/forksCountLabel"
                 tools:text="640" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/stargazersCountLabel"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimensOf48dp"
+                android:text="@string/stars_text"
+                app:layout_constraintBottom_toBottomOf="@id/forksCount"
+                app:layout_constraintStart_toEndOf="@id/forksCount"
+                app:layout_constraintTop_toTopOf="@id/forksCount" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/stargazersCount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dimensOf16dp"
-                app:layout_constraintBottom_toBottomOf="@id/forksCount"
-                app:layout_constraintStart_toEndOf="@id/forksCount"
-                app:layout_constraintTop_toTopOf="@id/forksCount"
+                android:layout_marginStart="@dimen/dimensOf8dp"
+                app:layout_constraintBottom_toBottomOf="@id/stargazersCountLabel"
+                app:layout_constraintStart_toEndOf="@id/stargazersCountLabel"
+                app:layout_constraintTop_toTopOf="@id/stargazersCountLabel"
                 tools:text="98" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -69,7 +92,7 @@
                 android:id="@+id/userName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimensOf8dp"
+                android:layout_marginTop="@dimen/dimensOf4dp"
                 android:gravity="start"
                 app:layout_constraintEnd_toEndOf="@id/userAvatar"
                 app:layout_constraintTop_toBottomOf="@id/userAvatar"

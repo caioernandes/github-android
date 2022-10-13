@@ -3,4 +3,6 @@
     <string name="title_activity_github_project_list">Repositórios</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="forks_text">Forks</string>
+    <string name="stars_text">Stars</string>
 </resources>
