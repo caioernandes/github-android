@@ -12,6 +12,7 @@ import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
@@ -36,20 +37,34 @@ internal class GithubProjectListViewModelTest {
     }
 
     @Test
-    fun `on get github project list should call useCase once`() = runTest {
+    fun `on get github project list returns success should call useCase once`() = runTest {
         // Given
-        getMovieListUseCaseMock()
+        val page = 1
+        getMovieListUseCaseMockSuccess()
 
         // When
         viewModel.onGetGithubProjectList()
 
         // Then
-        coVerify(exactly = 0) { getGithubProjectListUseCase.invoke() }
+        coVerify(exactly = 0) { getGithubProjectListUseCase.invoke(page = page) }
     }
 
-    private fun getMovieListUseCaseMock() {
+    @Test
+    fun `on get github project list returns error should call useCase once`() = runTest {
+        // Given
+        val page = 1
+        getMovieListUseCaseMockError()
+
+        // When
+        viewModel.onGetGithubProjectList()
+
+        // Then
+        coVerify(exactly = 0) { getGithubProjectListUseCase.invoke(page = page) }
+    }
+
+    private fun getMovieListUseCaseMockSuccess(page: Int = 1) {
         coEvery {
-            getGithubProjectListUseCase()
+            getGithubProjectListUseCase(page = page)
         } returns flowOf(
             GithubProjectData(
                 incompleteResults = false,
@@ -64,6 +79,12 @@ internal class GithubProjectListViewModelTest {
                 totalCount = 10
             )
         )
+    }
+
+    private fun getMovieListUseCaseMockError(page: Int = 1) {
+        coEvery {
+            getGithubProjectListUseCase(page = page)
+        } returns flow { throw InterruptedException() }
     }
 
     private fun createViewModel() {

@@ -8,7 +8,7 @@ class GithubProjectListRemoteDataSourceImpl(
     private val service: GithubProjectListService
 ) : GithubProjectListRemoteDataSource {
 
-    override suspend fun getGithubProjectList(): GithubProjectData {
-        return service.getGithubProjectList().toDomain()
+    override suspend fun getGithubProjectList(page: Int): GithubProjectData {
+        return service.getGithubProjectList(page = page).toDomain()
     }
 }

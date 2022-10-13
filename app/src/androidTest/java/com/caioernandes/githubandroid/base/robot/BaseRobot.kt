@@ -9,24 +9,20 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.assertion.ViewAssertions
-import androidx.test.espresso.intent.rule.IntentsTestRule
 import androidx.test.espresso.matcher.BoundedMatcher
 import androidx.test.espresso.matcher.ViewMatchers
 import com.caioernandes.githubandroid.extensions.onView
 import com.caioernandes.githubandroid.extensions.verify
 import com.caioernandes.githubandroid.features.githubprojectlist.presentation.GithubProjectListActivity
+import com.caioernandes.githubandroid.helpers.lazyActivityScenarioRule
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.junit.Rule
 
 open class BaseRobot {
 
-    @Rule
-    @JvmField
-    val activityRule = IntentsTestRule(
-        GithubProjectListActivity::class.java,
-        true, true
-    )
+    @get:Rule
+    val rule = lazyActivityScenarioRule<GithubProjectListActivity>(launchActivity = false)
 
     fun checkViewIsDisplayed(@IdRes viewId: Int) = apply {
         ViewMatchers.withId(viewId).onView {

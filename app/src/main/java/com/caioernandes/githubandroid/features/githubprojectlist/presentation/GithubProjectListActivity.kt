@@ -1,9 +1,9 @@
 package com.caioernandes.githubandroid.features.githubprojectlist.presentation
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.caioernandes.common.extensions.onLastItemScrollListener
 import com.caioernandes.common.extensions.showLongToast
 import com.caioernandes.common.extensions.viewBinding
 import com.caioernandes.githubandroid.R
@@ -37,7 +37,7 @@ class GithubProjectListActivity : AppCompatActivity(R.layout.activity_github_pro
         viewModel.viewState.observe(this) { state ->
             when (state) {
                 is GithubProjectListViewState.Loading -> {
-                    showLoadingProgress(state.isLoading)
+                    showLoadingProgress(isLoading = state.isLoading)
                 }
                 is GithubProjectListViewState.Failure -> {
                     showError(message = state.error)
@@ -49,8 +49,9 @@ class GithubProjectListActivity : AppCompatActivity(R.layout.activity_github_pro
         }
     }
 
-    private fun setupGithubProjectListRecyclerView() {
-        binding.githubProjectListRecyclerView.adapter = adapter
+    private fun setupGithubProjectListRecyclerView() = with(binding) {
+        githubProjectListRecyclerView.adapter = adapter
+        githubProjectListRecyclerView.onLastItemScrollListener { viewModel.onGetGithubProjectList() }
     }
 
     private fun showLoadingProgress(isLoading: Boolean) = with(binding) {
@@ -63,6 +64,6 @@ class GithubProjectListActivity : AppCompatActivity(R.layout.activity_github_pro
     }
 
     private fun showGithubProjectData(githubProjectData: GithubProjectData) {
-        adapter.submitList(githubProjectData.items)
+        adapter.addItems(githubProjectData.items)
     }
 }

@@ -4,5 +4,5 @@ import com.caioernandes.githubandroid.features.githubprojectlist.domain.model.Gi
 
 interface GithubProjectListRemoteDataSource {
 
-    suspend fun getGithubProjectList(): GithubProjectData
+    suspend fun getGithubProjectList(page: Int): GithubProjectData
 }

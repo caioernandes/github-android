@@ -4,7 +4,6 @@ import android.app.Application
 import com.caioernandes.githubandroid.features.githubprojectlist.di.appModule
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
-import okhttp3.Request
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -24,18 +23,13 @@ class TestApp : Application() {
     }
 
     private val networkAndroidTestModule = module(override = true) {
+        single { OkHttpClient.Builder().build() }
+
         single {
-            val gson = GsonBuilder()
-                .setLenient()
-                .create()
-            val httpClient = OkHttpClient.Builder().addInterceptor { chain ->
-                val request: Request = chain.request().newBuilder().build()
-                chain.proceed(request)
-            }
             Retrofit.Builder()
                 .baseUrl(BASE_URL)
-                .client(httpClient.build())
-                .addConverterFactory(GsonConverterFactory.create(gson))
+                .client(get())
+                .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
                 .build()
         }
     }

@@ -10,7 +10,17 @@ import com.caioernandes.githubandroid.databinding.ItemGithubProjectBinding
 import com.caioernandes.githubandroid.features.githubprojectlist.domain.model.Item
 
 internal class GithubProjectListAdapter :
-    ListAdapter<Item, GithubProjectListAdapter.GithubProjectViewHolder>(Companion) {
+    RecyclerView.Adapter<GithubProjectListAdapter.GithubProjectViewHolder>() {
+
+    private var items = arrayListOf<Item>()
+
+    fun addItems(items: List<Item>) {
+        if (items.isNotEmpty()) {
+            val oldSize = this.items.size
+            this.items.addAll(items)
+            notifyItemRangeInserted(oldSize, items.size)
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GithubProjectViewHolder {
         val binding =
@@ -19,8 +29,10 @@ internal class GithubProjectListAdapter :
     }
 
     override fun onBindViewHolder(holder: GithubProjectViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(items[position])
     }
+
+    override fun getItemCount() = items.size
 
     inner class GithubProjectViewHolder(
         private val itemBinding: ItemGithubProjectBinding
@@ -34,16 +46,6 @@ internal class GithubProjectListAdapter :
                 userAvatar.loadFromUrl(url = avatarUrl)
                 userName.text = login
             }
-        }
-    }
-
-    private companion object : DiffUtil.ItemCallback<Item>() {
-        override fun areItemsTheSame(oldItem: Item, newItem: Item): Boolean {
-            return oldItem.name == newItem.name
-        }
-
-        override fun areContentsTheSame(oldItem: Item, newItem: Item): Boolean {
-            return oldItem == newItem
         }
     }
 }

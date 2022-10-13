@@ -14,7 +14,7 @@ class GithubProjectListRepositoryImpl(
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO
 ): GithubProjectListRepository {
 
-    override suspend fun getGithubProjectList(): Flow<GithubProjectData> {
-        return flowOf(dataSource.getGithubProjectList()).flowOn(dispatcher)
+    override suspend fun getGithubProjectList(page: Int): Flow<GithubProjectData> {
+        return flowOf(dataSource.getGithubProjectList(page = page)).flowOn(dispatcher)
     }
 }

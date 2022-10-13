@@ -1,13 +1,13 @@
 package com.caioernandes.githubandroid.features.githubprojectlist.presentation
 
 import android.content.Intent
+import androidx.lifecycle.Lifecycle
+import androidx.test.core.app.ApplicationProvider
 import com.caioernandes.githubandroid.helpers.ConstantsJsonResponse
-import com.google.gson.GsonBuilder
 import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import okhttp3.mockwebserver.RecordedRequest
-import java.io.FileReader
 
 private const val SERVER_PORT = 8080
 
@@ -32,7 +32,11 @@ class GithubProjectListActivityRobot : GithubProjectListActivityAssertionRobot()
     }
 
     fun launch() {
-        activityRule.launchActivity(Intent())
+        val intent = Intent(
+            ApplicationProvider.getApplicationContext(),
+            GithubProjectListActivity::class.java
+        )
+        rule.launch(intent)
     }
 
     companion object {

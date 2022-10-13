@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 class GetGithubProjectListUseCase(private val repository: GithubProjectListRepository) {
 
-    suspend operator fun invoke(): Flow<GithubProjectData> {
-        return repository.getGithubProjectList()
+    suspend operator fun invoke(page: Int): Flow<GithubProjectData> {
+        return repository.getGithubProjectList(page = page)
     }
 }
