@@ -3,16 +3,10 @@ package com.caioernandes.githubandroid.features.githubprojectlist.presentation
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
-import com.caioernandes.common.extensions.onLastItemScrollListener
 import com.caioernandes.common.extensions.setupNavigationGraph
-import com.caioernandes.common.extensions.showLongToast
 import com.caioernandes.common.extensions.viewBinding
 import com.caioernandes.githubandroid.R
 import com.caioernandes.githubandroid.databinding.ActivityGithubProjectListBinding
-import com.caioernandes.githubandroid.features.githubprojectlist.domain.model.GithubProjectData
-import com.caioernandes.githubandroid.features.githubprojectlist.presentation.adapter.GithubProjectListAdapter
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class GithubProjectListActivity : AppCompatActivity(R.layout.activity_github_project_list) {
 
