@@ -1,4 +1,4 @@
-package com.caioernandes.githubandroid.features.githubprojectlist.data.datasource
+package com.caioernandes.githubandroid.features.githubprojectlist.data.datasource.remote
 
 import com.caioernandes.githubandroid.features.githubprojectlist.data.api.GithubProjectListService
 import com.caioernandes.githubandroid.features.githubprojectlist.data.mapper.toDomain

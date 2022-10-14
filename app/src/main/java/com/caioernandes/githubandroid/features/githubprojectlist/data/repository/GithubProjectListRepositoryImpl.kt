@@ -1,6 +1,6 @@
 package com.caioernandes.githubandroid.features.githubprojectlist.data.repository
 
-import com.caioernandes.githubandroid.features.githubprojectlist.data.datasource.GithubProjectListRemoteDataSource
+import com.caioernandes.githubandroid.features.githubprojectlist.data.datasource.remote.GithubProjectListRemoteDataSource
 import com.caioernandes.githubandroid.features.githubprojectlist.domain.model.GithubProjectData
 import com.caioernandes.githubandroid.features.githubprojectlist.domain.repository.GithubProjectListRepository
 import kotlinx.coroutines.CoroutineDispatcher
