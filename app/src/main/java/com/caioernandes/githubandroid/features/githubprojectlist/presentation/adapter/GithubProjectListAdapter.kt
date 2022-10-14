@@ -14,7 +14,7 @@ internal class GithubProjectListAdapter :
 
     fun addItems(items: List<Item>) {
         if (items.isNotEmpty()) {
-            val oldSize = this.items.size
+            val oldSize = itemCount
             this.items.addAll(items)
             notifyItemRangeInserted(oldSize, items.size)
         }

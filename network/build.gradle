@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace 'com.caioernandes.network'
-    compileSdk 33
+    compileSdk sdkVersions.compileSdk
 
     defaultConfig {
-        minSdk 23
-        targetSdk 33
+        minSdk sdkVersions.minSdk
+        targetSdk sdkVersions.targetSdk
         consumerProguardFiles "consumer-rules.pro"
     }
 

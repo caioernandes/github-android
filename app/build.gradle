@@ -5,14 +5,14 @@ plugins {
 
 android {
     namespace 'com.caioernandes.githubandroid'
-    compileSdk 33
+    compileSdk sdkVersions.compileSdk
 
     defaultConfig {
         applicationId "com.caioernandes.githubandroid"
-        minSdk 23
-        targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        minSdk sdkVersions.minSdk
+        targetSdk sdkVersions.targetSdk
+        versionCode appVersions.versionCode
+        versionName appVersions.versionName
 
         testInstrumentationRunner "com.caioernandes.githubandroid.helpers.MockTestRunner"
     }
