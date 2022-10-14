@@ -4,3 +4,44 @@ plugins {
     id 'com.android.library' version '7.3.0' apply false
     id 'org.jetbrains.kotlin.android' version '1.7.10' apply false
 }
+
+ext.versions = [
+        "androidx_core": "1.7.0",
+        "appcompat": "1.5.1",
+        "picasso": "2.71828",
+        "circularimageview": "1.1",
+        "material": "1.6.1",
+        "constraintlayout": "1.5.1",
+        "lottie": "3.3.1",
+        "navigation": "2.5.2",
+        "viewbinding": "4.3.0",
+        "kotlinx_coroutines": "1.6.1",
+        "lifecycle_extensions": "2.2.0",
+        "lifecycle_viewmodel_ktx": "2.5.1",
+        "koin": "3.0.2",
+        "retrofit": "2.9.0",
+        "gson": "2.8.9"
+]
+
+ext.deps = [
+        "androidx_core": "androidx.core:core-ktx:${versions.androidx_core}",
+        "androix_appcompat": "androidx.appcompat:appcompat:${versions.appcompat}",
+        "picasso": "com.squareup.picasso:picasso:${versions.picasso}",
+        "circularimageview": "com.pkmmte.view:circularimageview:${versions.circularimageview}",
+        "material": "com.google.android.material:material:${versions.material}",
+        "constraintlayout": "androidx.constraintlayout:constraintlayout:${versions.constraintlayout}",
+        "lottie": "com.airbnb.android:lottie:${versions.lottie}",
+        "navigation_fragment": "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
+        "navigation_ui": "androidx.navigation:navigation-ui-ktx:${versions.navigation}",
+        "viewbinding": "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:${versions.viewbinding}",
+        "kotlinx_coroutines_core": "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.kotlinx_coroutines}",
+        "kotlinx_coroutines_android": "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.kotlinx_coroutines}",
+        "lifecycle_extensions": "androidx.lifecycle:lifecycle-extensions:${versions.lifecycle_extensions}",
+        "lifecycle_viewmodel_ktx": "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle_viewmodel_ktx}",
+        "koin_android": "io.insert-koin:koin-android:${versions.koin}",
+        "koin_android_ext": "io.insert-koin:koin-android-ext:${versions.koin}",
+        "koin_androidx_workmanager": "io.insert-koin:koin-androidx-workmanager:${versions.koin}",
+        "retrofit_converter_gson": "com.squareup.retrofit2:converter-gson:${versions.retrofit}",
+        "gson": "com.google.code.gson:gson:${versions.gson}",
+        "retrofit": "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+]

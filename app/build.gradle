@@ -45,47 +45,44 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation deps.androidx_core
+    implementation deps.androix_appcompat
 
     implementation project(":common")
     implementation project(":network")
 
     // Layout
-    implementation 'com.squareup.picasso:picasso:2.71828'
-    implementation 'com.pkmmte.view:circularimageview:1.1'
-    implementation 'com.google.android.material:material:1.6.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.airbnb.android:lottie:3.3.1'
+    implementation deps.picasso
+    implementation deps.circularimageview
+    implementation deps.material
+    implementation deps.constraintlayout
+    implementation deps.lottie
 
     // Navigation
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.2'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.5.2'
+    implementation deps.navigation_fragment
+    implementation deps.navigation_ui
 
     // ViewBinding
-    implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:4.3.0'
+    implementation deps.viewbinding
 
     // Coroutines
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1"
+    implementation deps.kotlinx_coroutines_core
+    implementation deps.kotlinx_coroutines_android
 
     // ViewModel and LiveData
-    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+    implementation deps.lifecycle_extensions
+    implementation deps.lifecycle_viewmodel_ktx
 
     // Koin
-    implementation "io.insert-koin:koin-android:3.0.2"
-    implementation "io.insert-koin:koin-android-ext:3.0.2"
-    implementation "io.insert-koin:koin-androidx-workmanager:3.0.2"
+    implementation deps.koin_android
+    implementation deps.koin_android_ext
+    implementation deps.koin_androidx_workmanager
 
     // Gson || Retrofit
-    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
-    implementation 'com.google.code.gson:gson:2.8.9'
-    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation deps.retrofit_converter_gson
+    implementation deps.gson
+    implementation deps.retrofit
 
-    implementation("androidx.appcompat:appcompat:1.5.1")
-    implementation("com.google.android.material:material:1.4.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     debugImplementation("androidx.fragment:fragment-testing:1.5.2")
 
     // Unit Test

@@ -30,21 +30,21 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation deps.androidx_core
+    implementation deps.androix_appcompat
 
     // Layout
-    implementation 'com.google.android.material:material:1.6.1'
-    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation deps.picasso
+    implementation deps.material
 
     // Navigation
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.2'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.5.2'
+    implementation deps.navigation_fragment
+    implementation deps.navigation_ui
 
     // ViewBinding
-    implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:4.3.0'
+    implementation deps.viewbinding
 
     // ViewModel and LiveData
-    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+    implementation deps.lifecycle_extensions
+    implementation deps.lifecycle_viewmodel_ktx
 }
