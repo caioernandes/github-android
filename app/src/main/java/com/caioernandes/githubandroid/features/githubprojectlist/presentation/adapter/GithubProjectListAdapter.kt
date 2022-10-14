@@ -37,7 +37,7 @@ internal class GithubProjectListAdapter :
     ) : RecyclerView.ViewHolder(itemBinding.root) {
 
         fun bind(item: Item) = with(itemBinding) {
-            projectName.text = item.name
+            projectName.setBoldText(item.name)
             forksCount.text = item.forksCount
             stargazersCount.text = item.stargazersCount
             with(item.owner) {
@@ -46,7 +46,7 @@ internal class GithubProjectListAdapter :
                         userAvatar.loadFromUrl(url = it)
                     }
                 }
-                userName.text = login
+                userName.setBoldText(login)
             }
         }
     }
