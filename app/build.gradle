@@ -83,29 +83,26 @@ dependencies {
     implementation deps.gson
     implementation deps.retrofit
 
-    debugImplementation("androidx.fragment:fragment-testing:1.5.2")
-
     // Unit Test
-    debugImplementation 'androidx.fragment:fragment-testing:1.5.2'
-    implementation "io.insert-koin:koin-test:3.0.2"
-    implementation "com.squareup.okhttp3:mockwebserver:4.9.1"
-    implementation 'androidx.test.ext:junit-ktx:1.1.3'
-    testImplementation "app.cash.turbine:turbine:0.9.0"
-    testImplementation "io.mockk:mockk:1.12.0"
-    testImplementation "io.mockk:mockk-android:1.12.0"
-    testImplementation "junit:junit:4.13.2"
-    testImplementation "androidx.test.ext:junit:1.1.3"
-    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.1"
-    testImplementation "org.mockito:mockito-inline:3.3.3"
-    testImplementation "androidx.test.espresso:espresso-core:3.4.0"
-    testImplementation "androidx.arch.core:core-testing:2.1.0"
+    implementation depsTest.koin
+    implementation depsTest.mockwebserver
+    implementation depsTest.junit_ktx
+    testImplementation depsTest.turbine
+    testImplementation depsTest.mockk
+    testImplementation depsTest.mockk_android
+    testImplementation depsTest.junit
+    testImplementation depsTest.espresso_core
+    testImplementation depsTest.junit_ext
+    testImplementation depsTest.kotlinx_coroutines_test
+    testImplementation depsTest.core_testing
 
     // Instrumentation Test
-    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
-    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.1"
-    androidTestImplementation "io.mockk:mockk-android:1.12.0"
-    androidTestImplementation "androidx.test.espresso:espresso-contrib:3.3.0"
-    androidTestImplementation "androidx.test.espresso:espresso-idling-resource:3.4.0"
-    androidTestImplementation "androidx.test.espresso:espresso-intents:3.4.0"
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    debugImplementation depsAndroidTest.fragment_testing
+    androidTestImplementation depsAndroidTest.core_testing
+    androidTestImplementation depsAndroidTest.kotlinx_coroutines_test
+    androidTestImplementation depsAndroidTest.mockk_android
+    androidTestImplementation depsAndroidTest.espresso_contrib
+    androidTestImplementation depsAndroidTest.espresso_idling_resource
+    androidTestImplementation depsAndroidTest.espresso_intents
+    androidTestImplementation depsAndroidTest.espresso_core
 }

@@ -33,7 +33,7 @@ internal class GithubProjectListAdapter :
     override fun getItemCount() = items.size
 
     inner class GithubProjectViewHolder(
-        private val itemBinding: ItemGithubProjectBinding
+        private val itemBinding: ItemGithubProjectBinding,
     ) : RecyclerView.ViewHolder(itemBinding.root) {
 
         fun bind(item: Item) = with(itemBinding) {
@@ -41,7 +41,11 @@ internal class GithubProjectListAdapter :
             forksCount.text = item.forksCount
             stargazersCount.text = item.stargazersCount
             with(item.owner) {
-                userAvatar.loadFromUrl(url = avatarUrl)
+                avatarUrl.let {
+                    if (it.isNotEmpty()) {
+                        userAvatar.loadFromUrl(url = it)
+                    }
+                }
                 userName.text = login
             }
         }
